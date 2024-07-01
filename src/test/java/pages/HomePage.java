@@ -23,8 +23,16 @@ public class HomePage {
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     public WebElement alertsMenu;
 
+    @FindBy(xpath = "//h5[text()='Forms']")
+    public WebElement formsMenu;
+
     public void navigateToAlertsMenu(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(alertsMenu);
+    }
+
+    public void navigateToFormsMenu(){
+        pageMethods.scrollPage(0, 350);
+        elementMethods.clickElement(formsMenu);
     }
 }

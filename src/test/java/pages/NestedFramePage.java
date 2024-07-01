@@ -33,6 +33,7 @@ public class NestedFramePage {
 
     public void interectWithNestedFrame(){
         frameMethods.switchToFrame("frame1");
+        System.out.println(childFrame.getText());
         frameMethods.switchToChildFrame(childFrame);
         System.out.println(text.getText());
     }

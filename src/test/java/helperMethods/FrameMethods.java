@@ -7,12 +7,9 @@ public class FrameMethods {
 
     public WebDriver driver;
 
-    //Constructor
     public FrameMethods(WebDriver driver) {
         this.driver = driver;
     }
-
-    //Metode generale pt interactiunea cu iFrame-uri
 
     public void switchToFrame(String text){
         driver.switchTo().frame(text);
@@ -25,5 +22,4 @@ public class FrameMethods {
     public void defaultContentMethod(){
         driver.switchTo().defaultContent();
     }
-
 }

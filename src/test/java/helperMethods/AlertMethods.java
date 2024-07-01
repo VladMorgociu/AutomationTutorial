@@ -16,9 +16,6 @@ public class AlertMethods {
         this.driver = driver;
     }
 
-
-    //Definim metode generale pentru interactiunea cu alerte
-
     public void waitForAlert () {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());
