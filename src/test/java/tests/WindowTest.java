@@ -77,12 +77,12 @@ public class WindowTest {
         //List<String> window = new ArrayList<>(driver.getWindowHandles());
 
         //Ne mutam cu focusul pe un alt tab
-       // driver.switchTo().window(window.get(1));
+        // driver.switchTo().window(window.get(1));
         windowMethods.switchSpecificTab(1);
         System.out.println(driver.getCurrentUrl());
 
         //driver.close();
         windowMethods.closeCurrentTab();
         driver.quit();
- }
+    }
 }
