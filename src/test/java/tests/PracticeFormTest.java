@@ -26,7 +26,7 @@ public class PracticeFormTest {
         String firstNameValue = "Vlad";
         String lastNameValue = "Morgociu";
         String userEmailValue = "vlad.morgociu@blabla.com";
-        String genderValue = "Female";
+        String genderValue = "Female"; 
         String mobilePhoneValue = "0712345678";
         String dateOfBirthDayValue = "20";
         String subjectInputValue = "Accounting";
