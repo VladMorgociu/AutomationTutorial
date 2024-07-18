@@ -1,48 +1,41 @@
 package pages;
 
-import helperMethods.ElementMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class WebTablePage {
-
-    public WebDriver driver;
-    public ElementMethods elementMethods;
+public class WebTablePage extends  BasePage{
 
     public WebTablePage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(id = "addNewRecordButton")
-    public WebElement addElement;
+    private WebElement addElement;
     @FindBy(id = "firstName")
-    public WebElement firstNameElement;
+    private WebElement firstNameElement;
     @FindBy(id = "lastName")
-    public WebElement lastNameElement;
+    private WebElement lastNameElement;
     @FindBy(id = "userEmail")
-    public WebElement emailElement;
+    private WebElement emailElement;
     @FindBy(id = "age")
-    public WebElement ageElement;
+    private WebElement ageElement;
     @FindBy(id = "salary")
-    public WebElement salaryElement;
+    private WebElement salaryElement;
     @FindBy(id = "department")
-    public WebElement departmentElement;
+    private WebElement departmentElement;
     @FindBy(id = "submit")
-    public  WebElement submitElement;
+    private  WebElement submitElement;
     @FindBy(id = "edit-record-4")
-    public WebElement updateElement;
+    private WebElement updateElement;
     @FindBy(id = "salary")
-    public WebElement editSalaryElement;
+    private WebElement editSalaryElement;
     @FindBy(id = "department")
-    public WebElement editDepartmentElement;
+    private WebElement editDepartmentElement;
     @FindBy(id = "submit")
-    public WebElement editSubmit;
+    private WebElement editSubmit;
     @FindBy(id = "delete-record-4")
-    public WebElement deleteElement;
+    private WebElement deleteElement;
 
     public void addEntry(String firstNameValue, String lastNameValue, String emailElementValue, String ageElementValue, String salaryElementValue,
                          String departmentElementValue){
