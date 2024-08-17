@@ -1,16 +1,12 @@
 package helperMethods;
-
+import lombok.AllArgsConstructor;
 import org.openqa.selenium.WebDriver;
-
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 public class WindowMethods {
     public WebDriver driver;
-
-    public WindowMethods(WebDriver driver) {
-        this.driver = driver;
-    }
 
     public void switchSpecificTab(Integer index) {
         List<String> window = new ArrayList<>(driver.getWindowHandles());
