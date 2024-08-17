@@ -1,5 +1,6 @@
 package pages;
 
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +19,10 @@ public class NestedFramePage extends  BasePage{
 
     public void interectWithNestedFrame(){
         frameMethods.switchToFrame("frame1");
+        LoggerUtility.info("The user switched to a certain frame.");
         System.out.println(childFrame.getText());
         frameMethods.switchToChildFrame(childFrame);
+        LoggerUtility.info("The user switches to child frame.");
         System.out.println(text.getText());
     }
 }

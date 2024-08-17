@@ -1,5 +1,6 @@
 package pages;
 
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,17 +23,22 @@ public class FramePage extends BasePage{
     public void interactWithBigFrame(){
         frameMethods.switchToFrame("frame1");
         System.out.println(iFrame1Text.getText());
+        LoggerUtility.info("The user switches to another frame.");
         frameMethods.defaultContentMethod();
+        LoggerUtility.info("The user interacts with the new frame.");
     }
 
     public void interactWithSmallFrame(){
         frameMethods.switchToFrame("frame2");
         System.out.println(iFrame2Text.getText());
+        LoggerUtility.info("The user switches to frame 2.");
         frameMethods.defaultContentMethod();
+        LoggerUtility.info("The user interacts with the new frame.");
     }
 
     public void  navigateToNestedFrames(){
 
         elementMethods.clickElement(nestedFramesSubmenu);
+        LoggerUtility.info("The user clicks the nester frames submenu.");
     }
 }
