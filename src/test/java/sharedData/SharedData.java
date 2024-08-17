@@ -16,7 +16,7 @@ public class SharedData {
     @BeforeMethod
     public void prepareEnvironment(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--Headless=new");
+        options.addArguments("--headless=new");
         driver = new ChromeDriver(options);
         driver.get("https://demoqa.com");
         driver.manage().window().maximize();
