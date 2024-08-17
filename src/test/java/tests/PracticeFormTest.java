@@ -26,6 +26,5 @@ public class PracticeFormTest extends SharedData {
         practiceFormPage.fillEntireForm(testData);
 
         practiceFormPage.validateEntireForm(testData);
-
     }
 }
