@@ -1,5 +1,6 @@
 package pages;
 
+import objectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -37,24 +38,21 @@ public class WebTablePage extends  BasePage{
     @FindBy(id = "delete-record-4")
     private WebElement deleteElement;
 
-    public void addEntry(String firstNameValue, String lastNameValue, String emailElementValue, String ageElementValue, String salaryElementValue,
-                         String departmentElementValue){
+    public void addEntry(WebTableObject testData){
         elementMethods.clickElement(addElement);
-        elementMethods.fillElement(firstNameElement, firstNameValue);
-        elementMethods.fillElement(lastNameElement, lastNameValue);
-        elementMethods.fillElement(emailElement, emailElementValue);
-        elementMethods.fillElement(ageElement, ageElementValue);
-        elementMethods.fillElement(salaryElement, salaryElementValue);
-        elementMethods.fillElement(departmentElement, departmentElementValue);
+        elementMethods.fillElement(firstNameElement, testData.getFirstNameElementValue());
+        elementMethods.fillElement(lastNameElement, testData.getLastNameElementValue());
+        elementMethods.fillElement(emailElement, testData.getUserEmailElementValue());
+        elementMethods.fillElement(ageElement, testData.getAgeElementValue());
+        elementMethods.fillElement(salaryElement, testData.getSalaryElementValue());
+        elementMethods.fillElement(departmentElement, testData.getDepartmentElementValue());
         elementMethods.clickElement(submitElement);
     }
 
-    public void editEntry(String editSalaryValue, String editDepartmentElementValue){
+    public void editEntry(WebTableObject testData){
         elementMethods.clickElement(updateElement);
-        elementMethods.clearFillElement(editSalaryElement, editSalaryValue);
-        elementMethods.fillElement(editSalaryElement, editSalaryValue);
-        elementMethods.clearFillElement(editDepartmentElement,editDepartmentElementValue);
-        elementMethods.fillElement(editDepartmentElement, editDepartmentElementValue);
+        elementMethods.clearFillElement(editSalaryElement, testData.getEditSalaryElementValue());
+        elementMethods.clearFillElement(editDepartmentElement,testData.getEditDepartmentElementValue());
         elementMethods.clickElement(editSubmit);
     }
 

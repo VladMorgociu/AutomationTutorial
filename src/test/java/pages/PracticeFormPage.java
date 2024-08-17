@@ -1,5 +1,6 @@
 package pages;
 
+import objectData.PracticeFormObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -79,15 +80,13 @@ public class PracticeFormPage extends BasePage{
     @FindBy(id = "closeLargeModal")
     private WebElement closeModal;
 
-    public void fillEntireForm(String firstNameValue, String lastNameValue,String userEmailValue,String genderValue,
-                               String mobilePhoneValue,String dateOfBirthDayValue,String subjectInputValue,String picturePathValue,
-                               String addressValue,String stateInputValue,String cityInputValue){
+    public void fillEntireForm(PracticeFormObject testData){
 
-        elementMethods.fillElement(firstName, firstNameValue);
-        elementMethods.fillElement(lastName, lastNameValue);
-        elementMethods.fillElement(userEmail, userEmailValue);
+        elementMethods.fillElement(firstName, testData.getFirstNameValue());
+        elementMethods.fillElement(lastName, testData.getLastNameValue());
+        elementMethods.fillElement(userEmail, testData.getUserEmailValue());
 
-        switch (genderValue) {
+        switch (testData.getGenderValue()) {
             case "Male":
                 elementMethods.clickElement(genderElements.get(0));
                 break;
@@ -101,20 +100,20 @@ public class PracticeFormPage extends BasePage{
                 break;
         }
 
-        userNumber.sendKeys(mobilePhoneValue);
+        userNumber.sendKeys(testData.getMobilePhoneValue());
         elementMethods.clickElement(dateOfBirth);
         elementMethods.selectByTextElement(monthSelect,"September");
         elementMethods.selectByValueElement(yearSelect,"1997");
 
         for (Integer index=0; index < daySelect.size(); index++) {
-            if(daySelect.get(index).getText().equals(dateOfBirthDayValue)){
+            if(daySelect.get(index).getText().equals(testData.getDateOfBirthDayValue())){
                 //dateOfBirthDaysElement.get(index).click();
                 elementMethods.clickElement(daySelect.get(index));
                 break;
             }
         }
 
-        elementMethods.fillElement(subjectsInput, subjectInputValue);
+        elementMethods.fillElement(subjectsInput, testData.getSubjectInputValue());
         elementMethods.pressElement(subjectsInput, Keys.ENTER);
 
 
@@ -128,45 +127,43 @@ public class PracticeFormPage extends BasePage{
             }
         }
 
-        File file = new File("src/test/resources/" + picturePathValue);
+        File file = new File("src/test/resources/" + testData.getPicturePathValue());
         uploadPicture.sendKeys(file.getAbsolutePath());
 
-        elementMethods.fillElement(currentAddress, addressValue);
+        elementMethods.fillElement(currentAddress, testData.getAddressValue());
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(state);
-        elementMethods.fillElement(selectState, stateInputValue);
+        elementMethods.fillElement(selectState, testData.getStateInputValue());
         elementMethods.pressElement(selectState, Keys.ENTER);
         elementMethods.clickElement(city);
-        elementMethods.fillElement(selectCity, cityInputValue);
+        elementMethods.fillElement(selectCity, testData.getCityInputValue());
         elementMethods.pressElement(selectCity, Keys.ENTER);
         elementMethods.clickElement(submit);
     }
 
-    public void validateEntireForm(String firstNameValue, String lastNameValue,String userEmailValue, String genderValue,
-                                   String mobilePhoneValue,String dateOfBirthValue, String subjectInputValue, String hobbiesValues, String picturePathValue,
-                                   String addressValue, String stateInputValue, String cityInputValue){
+    public void validateEntireForm(PracticeFormObject testData){
 
         Assert.assertEquals(thankYouMessage.getText(), "Thanks for submitting the form");
 
         List<WebElement> tableValues = driver.findElements(By.xpath("//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr"));
-        Assert.assertEquals(tableValues.get(0).getText(), "Student Name " + firstNameValue + " " + lastNameValue);
+        Assert.assertEquals(tableValues.get(0).getText(), "Student Name " + testData.getFirstNameValue() + " " + testData.getLastNameValue());
 
-        Assert.assertEquals(tableValues.get(1).getText(), "Student Email " + userEmailValue);
+        Assert.assertEquals(tableValues.get(1).getText(), "Student Email " + testData.getUserEmailValue());
 
-        Assert.assertEquals(tableValues.get(2).getText(), "Gender " + genderValue);
+        Assert.assertEquals(tableValues.get(2).getText(), "Gender " + testData.getGenderValue());
 
-        Assert.assertEquals(tableValues.get(3).getText(), "Mobile " + mobilePhoneValue);
+        Assert.assertEquals(tableValues.get(3).getText(), "Mobile " + testData.getMobilePhoneValue());
 
-        Assert.assertEquals(tableValues.get(5).getText(), "Subjects " + subjectInputValue);
+        Assert.assertEquals(tableValues.get(5).getText(), "Subjects " + testData.getSubjectInputValue());
 
-        String expectedHobbiesText = "Hobbies " + String.join(", ", hobbiesValues);
+        String expectedHobbiesText = "Hobbies " + String.join(", ", testData.getHobbiesValues());
         Assert.assertEquals(tableValues.get(6).getText(), expectedHobbiesText);
 
-        Assert.assertEquals(tableValues.get(7).getText(), "Picture " + picturePathValue);
+        Assert.assertEquals(tableValues.get(7).getText(), "Picture " + testData.getPicturePathValue());
 
-        Assert.assertEquals(tableValues.get(8).getText(), "Address " + addressValue);
+        Assert.assertEquals(tableValues.get(8).getText(), "Address " + testData.getAddressValue());
 
-        Assert.assertEquals(tableValues.get(9).getText(), "State and City " + stateInputValue + " " + cityInputValue);
+        Assert.assertEquals(tableValues.get(9).getText(), "State and City " + testData.getStateInputValue() + " " + testData.getCityInputValue());
 
         WebElement closeElement = driver.findElement(By.id("closeLargeModal"));
         elementMethods.clickElement(closeElement);

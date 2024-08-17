@@ -1,0 +1,14 @@
+{
+  "firstNameValue": "Vlad",
+  "lastNameValue": "Morgociu",
+  "userEmailValue": "vlad.morgociu@blabla.com",
+  "genderValue": "Female",
+  "mobilePhoneValue": "0712345678",
+  "dateOfBirthDayValue": "20",
+  "subjectInputValue": "Accounting",
+  "hobbiesValues": "Sports, Music",
+  "picturePathValue": "Test.txt",
+  "addressValue": "Strada Exemplu Nr. 1",
+  "stateInputValue": "NCR",
+  "cityInputValue": "Delhi"
+}
