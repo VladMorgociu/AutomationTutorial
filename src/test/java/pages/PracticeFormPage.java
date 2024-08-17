@@ -1,5 +1,6 @@
 package pages;
 
+import helperMethods.ElementMethods;
 import loggerUtility.LoggerUtility;
 import objectData.PracticeFormObject;
 import org.openqa.selenium.By;
@@ -165,7 +166,7 @@ public class PracticeFormPage extends BasePage{
     }
 
     public void validateEntireForm(PracticeFormObject testData){
-
+        elementMethods.waitForElementVisible(thankYouMessage);
         Assert.assertEquals(thankYouMessage.getText(), "Thanks for submitting the form");
         LoggerUtility.info("The user validates the presece of " + thankYouMessage.getText());
         List<WebElement> tableValues = driver.findElements(By.xpath("//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr"));
