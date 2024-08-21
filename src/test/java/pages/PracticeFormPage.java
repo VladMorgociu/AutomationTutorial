@@ -167,7 +167,7 @@ public class PracticeFormPage extends BasePage{
 
     public void validateEntireForm(PracticeFormObject testData){
         elementMethods.waitForElementVisible(thankYouMessage);
-        Assert.assertEquals(thankYouMessage.getText(), "Thank you for submitting the form!");
+        Assert.assertEquals(thankYouMessage.getText(), "Thanks for submitting the form");
         LoggerUtility.info("The user validates the presence of " + thankYouMessage.getText() + ".");
         List<WebElement> tableValues = driver.findElements(By.xpath("//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr"));
         Assert.assertEquals(tableValues.get(0).getText(), "Student Name " + testData.getFirstNameValue() + " " + testData.getLastNameValue());

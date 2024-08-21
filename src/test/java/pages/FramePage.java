@@ -39,6 +39,6 @@ public class FramePage extends BasePage{
     public void  navigateToNestedFrames(){
 
         elementMethods.clickElement(nestedFramesSubmenu);
-        LoggerUtility.info("The user clicke 'the Nested Frames' sub menu.");
+        LoggerUtility.info("The user clicked the 'Nested Frames' sub menu.");
     }
 }
