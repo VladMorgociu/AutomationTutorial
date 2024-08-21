@@ -23,17 +23,17 @@ public class HomePage extends  BasePage{
     public void navigateToAlertsMenu(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(alertsMenu);
-        LoggerUtility.info("The user clicks on Alerts Menu");
+        LoggerUtility.info("The user clicked on 'Alerts' menu.");
     }
 
     public void navigateToFormsMenu(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(formsMenu);
-        LoggerUtility.info("The user clicks on Forms Menu");
+        LoggerUtility.info("The user clicked on 'Forms' menu.");
     }
     public void navigateToElementsMenu(){
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(elementsMenu);
-        LoggerUtility.info("The user clicks on Elements Menu");
+        LoggerUtility.info("The user clicked on 'Elements' menu.");
     }
 }

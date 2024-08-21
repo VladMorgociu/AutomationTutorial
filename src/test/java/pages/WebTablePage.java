@@ -41,36 +41,36 @@ public class WebTablePage extends  BasePage{
 
     public void addEntry(WebTableObject testData){
         elementMethods.clickElement(addElement);
-        LoggerUtility.info("The user clicks the Add Button.");
+        LoggerUtility.info("The user clicked the 'Add' button.");
         elementMethods.fillElement(firstNameElement, testData.getFirstNameElementValue());
-        LoggerUtility.info("The user fills his first name.");
+        LoggerUtility.info("The user filled his first name.");
         elementMethods.fillElement(lastNameElement, testData.getLastNameElementValue());
-        LoggerUtility.info("The user fills his last name.");
+        LoggerUtility.info("The user filled his last name.");
         elementMethods.fillElement(emailElement, testData.getUserEmailElementValue());
-        LoggerUtility.info("The user fills his user email.");
+        LoggerUtility.info("The user filled his user email.");
         elementMethods.fillElement(ageElement, testData.getAgeElementValue());
-        LoggerUtility.info("The user fills his age.");
+        LoggerUtility.info("The user filled his age.");
         elementMethods.fillElement(salaryElement, testData.getSalaryElementValue());
-        LoggerUtility.info("The user fills his salary.");
+        LoggerUtility.info("The user filled his salary.");
         elementMethods.fillElement(departmentElement, testData.getDepartmentElementValue());
-        LoggerUtility.info("The user fills his department.");
+        LoggerUtility.info("The user filled his department.");
         elementMethods.clickElement(submitElement);
-        LoggerUtility.info("The user clicks on submit.");
+        LoggerUtility.info("The user clicked on submit.");
     }
 
     public void editEntry(WebTableObject testData){
         elementMethods.clickElement(updateElement);
-        LoggerUtility.info("The user clicks the update button.");
+        LoggerUtility.info("The user clicked the 'Update' button.");
         elementMethods.clearFillElement(editSalaryElement, testData.getEditSalaryElementValue());
-        LoggerUtility.info("The user clears and refills the salary field.");
+        LoggerUtility.info("The user cleared and refilled the salary field.");
         elementMethods.clearFillElement(editDepartmentElement,testData.getEditDepartmentElementValue());
-        LoggerUtility.info("The user clears and refills the department field.");
+        LoggerUtility.info("The user cleared and refilled the department field.");
         elementMethods.clickElement(editSubmit);
-        LoggerUtility.info("The user clicks on submit.");
+        LoggerUtility.info("The user clicked the 'Submit' button.");
     }
 
     public void deleteEntry(){
         elementMethods.clickElement(deleteElement);
-        LoggerUtility.info("The user deletes the entry.");
+        LoggerUtility.info("The user deleted the entry.");
     }
 }

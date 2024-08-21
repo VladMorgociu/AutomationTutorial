@@ -167,28 +167,28 @@ public class PracticeFormPage extends BasePage{
 
     public void validateEntireForm(PracticeFormObject testData){
         elementMethods.waitForElementVisible(thankYouMessage);
-        Assert.assertEquals(thankYouMessage.getText(), "Thanks for submitting the form");
-        LoggerUtility.info("The user validates the presece of " + thankYouMessage.getText());
+        Assert.assertEquals(thankYouMessage.getText(), "Thank you for submitting the form!");
+        LoggerUtility.info("The user validates the presence of " + thankYouMessage.getText() + ".");
         List<WebElement> tableValues = driver.findElements(By.xpath("//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr"));
         Assert.assertEquals(tableValues.get(0).getText(), "Student Name " + testData.getFirstNameValue() + " " + testData.getLastNameValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getFirstNameValue() + " " + testData.getLastNameValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getFirstNameValue() + " " + testData.getLastNameValue() + ".");
         Assert.assertEquals(tableValues.get(1).getText(), "Student Email " + testData.getUserEmailValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getUserEmailValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getUserEmailValue() + ".");
         Assert.assertEquals(tableValues.get(2).getText(), "Gender " + testData.getGenderValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getGenderValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getGenderValue() + ".");
         Assert.assertEquals(tableValues.get(3).getText(), "Mobile " + testData.getMobilePhoneValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getMobilePhoneValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getMobilePhoneValue() + ".");
         Assert.assertEquals(tableValues.get(5).getText(), "Subjects " + testData.getSubjectInputValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getSubjectInputValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getSubjectInputValue() + ".");
         String expectedHobbiesText = "Hobbies " + String.join(", ", testData.getHobbiesValues());
         Assert.assertEquals(tableValues.get(6).getText(), expectedHobbiesText);
-        LoggerUtility.info("The user validates the presece of " + testData.getHobbiesValues());
+        LoggerUtility.info("The user validated the presence of " + testData.getHobbiesValues() + ".");
         Assert.assertEquals(tableValues.get(7).getText(), "Picture " + testData.getPicturePathValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getPicturePathValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getPicturePathValue() + ".");
         Assert.assertEquals(tableValues.get(8).getText(), "Address " + testData.getAddressValue());
-        LoggerUtility.info("The user validates the presece of " + testData.getAddressValue());
+        LoggerUtility.info("The user validated the presence of " + testData.getAddressValue() + ".");
         Assert.assertEquals(tableValues.get(9).getText(), "State and City " + testData.getStateInputValue() + " " + testData.getCityInputValue());
-        LoggerUtility.info("The user validates the presece of state " + testData.getStateInputValue() + " and city " + testData.getCityInputValue());
+        LoggerUtility.info("The user validated the presence of state " + testData.getStateInputValue() + " and city " + testData.getCityInputValue() + ".");
 
         WebElement closeElement = driver.findElement(By.id("closeLargeModal"));
         elementMethods.clickElement(closeElement);

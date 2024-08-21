@@ -19,10 +19,10 @@ public class NestedFramePage extends  BasePage{
 
     public void interectWithNestedFrame(){
         frameMethods.switchToFrame("frame1");
-        LoggerUtility.info("The user switched to a certain frame.");
+        LoggerUtility.info("The user switched to a nested frame.");
         System.out.println(childFrame.getText());
         frameMethods.switchToChildFrame(childFrame);
-        LoggerUtility.info("The user switches to child frame.");
+        LoggerUtility.info("The user switched to the child frame.");
         System.out.println(text.getText());
     }
 }

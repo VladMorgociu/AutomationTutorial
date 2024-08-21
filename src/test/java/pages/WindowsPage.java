@@ -19,9 +19,9 @@ public class WindowsPage extends BasePage{
 
     public void interactWithNewTab(){
         pageMethods.scrollPage(0, 150);
-        LoggerUtility.info("The user scrolls down the page.");
+        LoggerUtility.info("The user scrolled down the page.");
         elementMethods.clickElement(newTab);
-        LoggerUtility.info("The user clicks on the newly opened tab.");
+        LoggerUtility.info("The user clicked on the newly opened tab.");
 
         System.out.println(driver.getCurrentUrl()); //url-ul paginii curente pe care ne aflam
         windowMethods.switchSpecificTab(1);
@@ -37,11 +37,11 @@ public class WindowsPage extends BasePage{
         pageMethods.scrollPage(0, 150);
         LoggerUtility.info("The user scrolls down the page.");
         newWindow.click();
-        LoggerUtility.info("The user clicks the new window.");
+        LoggerUtility.info("The user clicked the new window.");
 
         System.out.println(driver.getCurrentUrl());
         windowMethods.switchSpecificTab(1);
-        LoggerUtility.info("The user switches to another tab.");
+        LoggerUtility.info("The user switched to another tab.");
         System.out.println(driver.getCurrentUrl());
         windowMethods.closeCurrentTab();
         LoggerUtility.info("The user closed the current tab.");

@@ -25,17 +25,17 @@ public class AlertsWindowsPage extends BasePage{
     public void navigateToWindowPage(){
         pageMethods.scrollPage(0, 100);
         elementMethods.clickElement(browserWindows);
-        LoggerUtility.info("The user clicks on browser Window");
+        LoggerUtility.info("The user clicked on 'Browser Windows' button.");
     }
 
     public void navigateToFramePage(){
         pageMethods.scrollPage(0, 100);
         elementMethods.clickElement(frameButton);
-        LoggerUtility.info("The user clicks on Frame Button");
+        LoggerUtility.info("The user clicked on 'Frames' button.");
     }
 
     public void navigateToAlertsForm(){
         elementMethods.clickElement(alertsForm);
-        LoggerUtility.info("The user clicks on Alerts Menu");
+        LoggerUtility.info("The user clicked on 'Alerts' button.");
     }
 }

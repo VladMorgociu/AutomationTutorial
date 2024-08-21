@@ -17,6 +17,6 @@ public class FormsPage extends BasePage {
 
     public void navigateToPracticeForm(){
         elementMethods.clickElement(practiceForm);
-        LoggerUtility.info("The user clicks on the practice form button.");
+        LoggerUtility.info("The user clicked on the 'Practice Form' sub menu button.");
     }
 }

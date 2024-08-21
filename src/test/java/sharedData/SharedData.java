@@ -27,7 +27,7 @@ public class SharedData {
         driver.get("https://demoqa.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        LoggerUtility.info("The browser has opened successfully");
+        LoggerUtility.info("The browser has opened successfully!");
     }
 
     @AfterMethod
@@ -36,7 +36,7 @@ public class SharedData {
             LoggerUtility.error(result.getThrowable().getMessage());
         }
         driver.quit();
-        LoggerUtility.info("The browser has closed successfully");
+        LoggerUtility.info("The browser has closed successfully!");
     }
 
     public WebDriver getDriver(){
